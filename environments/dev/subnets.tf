@@ -23,7 +23,7 @@ resource "aws_subnet" "public_b" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "${var.environment}-public-a"
+    Name = "${var.environment}-public-b"
   }
 }
 
@@ -45,7 +45,7 @@ resource "aws_subnet" "private_app_b" {
   availability_zone = data.aws_availability_zones.available.names[0]
 
   tags = {
-    Name = "${var.environment}-private-app-a"
+    Name = "${var.environment}-private-app-b"
   }
 }
 
