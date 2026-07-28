@@ -8,9 +8,11 @@ systemctl enable docker
 
 systemctl start docker
 
-usermod -aG docker ec2-user
+docker pull ashytcloud/aws-infra-showcase:v1
+
 
 docker run -d \
-  --name web \
+  --name aws-infra-showcase \
+  --restart unless-stopped \
   -p 80:80 \
-  nginx
+  ashytcloud/aws-infra-showcase:v1
