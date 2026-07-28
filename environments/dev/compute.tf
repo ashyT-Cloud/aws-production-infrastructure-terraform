@@ -5,7 +5,7 @@ data "aws_ssm_parameter" "amazon_linux_ami" {
 # LT
 resource "aws_launch_template" "app" {
 
-  name_prefix = "dev-launch-template-"
+  name_prefix = "${var.environment}-launch-template-"
 
   image_id = data.aws_ssm_parameter.amazon_linux_ami.value
 
@@ -29,7 +29,7 @@ resource "aws_launch_template" "app" {
     resource_type = "instance"
 
     tags = {
-      Name = "dev-app-instance"
+      Name = "${var.environment}-app-instance"
     }
   }
 }

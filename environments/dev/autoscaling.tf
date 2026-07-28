@@ -1,6 +1,6 @@
 # LB Target Group
 resource "aws_lb_target_group" "app" {
-  name     = "dev-app-tg"
+  name     = "${var.environment}-app-tg"
   port     = 80
   protocol = "HTTP"
   vpc_id   = aws_vpc.main.id
@@ -16,14 +16,14 @@ resource "aws_lb_target_group" "app" {
   }
 
   tags = {
-    Name = "dev-app-tg"
+    Name = "${var.environment}-app-tg"
   }
 }
 
 
 resource "aws_autoscaling_group" "app" {
 
-  name = "dev-asg"
+  name = "${var.environment}-asg"
 
   desired_capacity = 2
   min_size         = 2

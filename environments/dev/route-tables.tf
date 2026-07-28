@@ -8,7 +8,8 @@ resource "aws_route_table" "public" {
   }
 
   tags = {
-    Name = "${var.environment}-public-rt"
+    Name        = "${var.environment}-public-rt"
+    Environment = var.environment
   }
 }
 
@@ -22,7 +23,8 @@ resource "aws_route_table" "private" {
   }
 
   tags = {
-    Name = "${var.environment}-private-rt"
+    Name        = "${var.environment}-private-rt"
+    Environment = var.environment
   }
 }
 

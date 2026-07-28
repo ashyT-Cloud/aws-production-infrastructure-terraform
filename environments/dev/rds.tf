@@ -1,5 +1,5 @@
 resource "aws_db_subnet_group" "main" {
-  name = "dev-db-subnet-group"
+  name = "${var.environment}-db-subnet-group"
   subnet_ids = [
     aws_subnet.private_db_a.id,
     aws_subnet.private_db_b.id
@@ -13,7 +13,7 @@ resource "aws_db_subnet_group" "main" {
 # MySQL RDS
 resource "aws_db_instance" "mysql" {
 
-  identifier = "dev-mysql"
+  identifier = "${var.environment}-mysql"
 
   engine = "mysql"
 
@@ -46,6 +46,6 @@ resource "aws_db_instance" "mysql" {
   multi_az = false
 
   tags = {
-    Name = "dev-mysql"
+    Name = "${var.environment}-mysql"
   }
 }
