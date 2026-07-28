@@ -17,3 +17,7 @@ output "alb_dns_name" {
 output "launch_template_id" {
   value = aws_launch_template.app.id
 }
+
+output "rds_endpoint" {
+  value = aws_db_instance.mysql.address
+}
