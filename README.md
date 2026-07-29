@@ -4,6 +4,7 @@
 
 <p align="center">
 
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 ![Terraform](https://img.shields.io/badge/Terraform-v1.15+-623CE4?logo=terraform)
 ![AWS](https://img.shields.io/badge/AWS-Cloud-orange?logo=amazonaws)
 ![GitHub Actions](https://img.shields.io/badge/GitHub-Actions-blue?logo=githubactions)
