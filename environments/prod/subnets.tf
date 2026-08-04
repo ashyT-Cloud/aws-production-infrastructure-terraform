@@ -37,7 +37,7 @@ resource "aws_subnet" "private_app_a" {
 resource "aws_subnet" "private_app_b" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = var.private_app_subnet_cidrs[1]
-  availability_zone = data.aws_availability_zones.available.names[0]
+  availability_zone = data.aws_availability_zones.available.names[1]
 
   tags = {
     Name = "${var.environment}-private-app-b"
